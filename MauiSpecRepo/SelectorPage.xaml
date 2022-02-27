@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="MauiSpecRepo.SelectorPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="SelectorPage"
+             BackgroundColor="White">
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand"
+                         Spacing="6"
+                         VerticalOptions="CenterAndExpand">
+        <Button Clicked="ButtonBehavior_Clicked"
+                Text="Using Behavior!" />
+        <Button Clicked="ButtonMapper_Clicked"
+                Text="Using Mapper!" />
+        <Button Clicked="ButtonCustomControl_Clicked"
+                Text="Using CustomControl!" />
+    </VerticalStackLayout>
+</ContentPage>
