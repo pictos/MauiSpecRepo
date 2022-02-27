@@ -4,7 +4,13 @@ public class ImageTintColor : Image
     public static readonly BindableProperty TintColorProperty =
         BindableProperty.Create(nameof(TintColor), typeof(Color), typeof(TintColorBehavior), propertyChanged: OnTintColorChanged);
 
-    private static void OnTintColorChanged(BindableObject bindable, object oldValue, object newValue)
+    public Color? TintColor
+    {
+        get => (Color?)GetValue(TintColorProperty);
+        set => SetValue(TintColorProperty, value);
+    }
+
+    static void OnTintColorChanged(BindableObject bindable, object oldValue, object newValue)
     {
         var control = (ImageTintColor)bindable;
         var tintColor = control.TintColor;
@@ -35,11 +41,5 @@ public class ImageTintColor : Image
             ImageEx.ClearColor((UIKit.UIImageView)control.Handler.NativeView);
 #endif
         }
-    }
-
-    public Color? TintColor
-    {
-        get => (Color?)GetValue(TintColorProperty);
-        set => SetValue(TintColorProperty, value);
     }
 }
